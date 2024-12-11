@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width" />
-  <title>Happy Birthday!</title>
+  <title>Happy Birthday! Princes</title>
 
   <link rel="stylesheet" href="styles/flexbox-center-container.css" media="all">
   <link rel="stylesheet" href="styles/system-fonts.css" media="all">
@@ -41,6 +41,20 @@
 
   <script src="scripts/confetti.min.js" charset="utf-8"></script>
   <script src="scripts/index.js" charset="utf-8"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const audio = document.getElementById('background-music');
+  
+      // Try to autoplay the music
+      audio.play().catch(() => {
+        // If autoplay fails, wait for user interaction
+        document.body.addEventListener('click', () => {
+          audio.play();
+        }, { once: true }); // Ensures the event is only triggered once
+      });
+    });
+  </script>
+  
 </body>
 
 </html>
